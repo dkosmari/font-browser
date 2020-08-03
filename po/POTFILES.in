@@ -1,0 +1,4 @@
+# List of source files which contain translatable strings.
+font-browser.py
+resources/font-browser.glade
+resources/gtk/menus.ui
