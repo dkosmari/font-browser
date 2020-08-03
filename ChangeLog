@@ -1,3 +1,8 @@
+2020-08-02  Daniel K. O.  <>
+
+	* resources/font-browser.glade: added label to the filter entry
+	box.
+
 2020-08-02  gettextize  <bug-gnu-gettext@gnu.org>
 
 	* Makefile.am (SUBDIRS): New variable.

@@ -26,7 +26,7 @@ Author: Daniel K. O.
   <!-- interface-local-resource-path icons -->
   <!-- interface-license-type gplv3 -->
   <!-- interface-name Font Browser -->
-  <!-- interface-description A GTK+ application to browse installed fonts. -->
+  <!-- interface-description An application to browse installed fonts. -->
   <!-- interface-copyright 2020 Daniel K. O. -->
   <!-- interface-authors Daniel K. O. -->
   <object class="GtkListStore" id="comp_list">
@@ -79,8 +79,9 @@ Author: Daniel K. O.
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Font Browser</property>
     <property name="default_width">1000</property>
-    <property name="default_height">700</property>
+    <property name="default_height">800</property>
     <property name="icon">icons/logo-64.png</property>
+    <property name="show_menubar">False</property>
     <child>
       <placeholder/>
     </child>
@@ -242,17 +243,34 @@ Author: Daniel K. O.
                         <property name="can_focus">False</property>
                         <property name="spacing">12</property>
                         <child>
-                          <object class="GtkSearchEntry" id="search_entry">
+                          <object class="GtkLabel" id="filter_label">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="label" translatable="yes">_Filter</property>
+                            <property name="use_underline">True</property>
+                            <property name="mnemonic_widget">filter_entry</property>
+                            <property name="xalign">1</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkSearchEntry" id="filter_entry">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
+                            <property name="has_focus">True</property>
+                            <property name="primary_icon_stock">gtk-find</property>
                             <property name="secondary_icon_tooltip_text" translatable="yes">Only show fonts that contain these words in the name.</property>
                             <property name="placeholder_text" translatable="yes">Filter</property>
-                            <signal name="search-changed" handler="on_search_entry_search_changed" swapped="no"/>
+                            <signal name="search-changed" handler="on_filter_entry_search_changed" swapped="no"/>
                           </object>
                           <packing>
                             <property name="expand">True</property>
                             <property name="fill">True</property>
-                            <property name="position">0</property>
+                            <property name="position">1</property>
                           </packing>
                         </child>
                         <child>
@@ -268,7 +286,7 @@ Author: Daniel K. O.
                           <packing>
                             <property name="expand">False</property>
                             <property name="fill">True</property>
-                            <property name="position">1</property>
+                            <property name="position">2</property>
                           </packing>
                         </child>
                       </object>
@@ -591,6 +609,7 @@ Author: Daniel K. O.
       <widget name="sample_text_label"/>
       <widget name="sample_scale_label"/>
       <widget name="only_selected_label"/>
+      <widget name="filter_label"/>
     </widgets>
   </object>
 </interface>

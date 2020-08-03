@@ -274,7 +274,7 @@ class Application(Gtk.Application):
         return False # False means "don't stop normal behavior"
 
 
-    def on_search_entry_search_changed(self, entry: Gtk.SearchEntry):
+    def on_filter_entry_search_changed(self, entry: Gtk.SearchEntry):
         search_text = entry.get_text().lower()
         self.search_tokens = search_text.split()
         self.refilter()
