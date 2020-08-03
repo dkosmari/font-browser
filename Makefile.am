@@ -30,13 +30,12 @@ BUILT_SOURCES += $(GRESOURCE_FILE)
 CLEANFILES += $(GRESOURCE_FILE)
 
 RESOURCES_DIR = $(srcdir)/resources
-RESOURCES := $(shell $(GLIB_COMPILE_RESOURCES) \
+RESOURCES = $(shell $(GLIB_COMPILE_RESOURCES) \
 			--generate-dependencies \
 			$(GRESOURCE_XML) \
 			--sourcedir=$(RESOURCES_DIR))
 
 $(GRESOURCE_FILE): $(GRESOURCE_XML) $(RESOURCES)
-	$(info building $@ from $<)
 	$(GLIB_COMPILE_RESOURCES) $< --target=$@ --sourcedir=$(RESOURCES_DIR)
 
 
