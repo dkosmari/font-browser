@@ -1,22 +1,30 @@
 [Desktop Entry]
 
 Name=Font Browser
+Name[es]=Navegador de Fuentes
+Name[fr]=Navigateur de polices
+Name[it]=Browser Caratteri
+Name[ja]=フォントブラウザ
 Name[pt_BR]=Navegador de Fontes
 
 Comment=Compare fonts side by side
+Comment[es]=Compara fuentes lado a lado
+Comment[fr]=Comparez les polices côte à côte
+Comment[it]=Confronta i caratteri fianco a fianco
+Comment[ja]=フォントを並べて比較する
 Comment[pt_BR]=Compare fontes lado a lado
 
 Keywords=font;fonts;
+Keywords[es]=fuente;fuentes;
+Keywords[fr]=police;polices;
+Keywords[it]=font;
+Keywords[ja]=フォント;字体;
 Keywords[pt_BR]=fonte;fontes;
 
 Icon=font-browser.png
 
 Terminal=false
-
 Type=Application
-
 StartupNotify=true
-
 Categories=Utility;
-
 Exec=font-browser

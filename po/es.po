@@ -1,0 +1,100 @@
+# Spanish translations for font-browser package.
+# Copyright (C) 2020 Daniel K. O.
+# This file is distributed under the same license as the font-browser package.
+# Daniel K. O. <nothing>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: font-browser 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-02 21:15-0300\n"
+"PO-Revision-Date: 2020-08-03 01:32-0300\n"
+"Last-Translator: Daniel K. O. <nothing>\n"
+"Language-Team: Portuguese - Brazil <nothing>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Generator: Gtranslator 3.32.1\n"
+
+#: font-browser.py:74 resources/font-browser.glade:80
+msgid "Font Browser"
+msgstr "Navegador de Fuentes"
+
+#: font-browser.py:115
+msgid "Close"
+msgstr "Cerca"
+
+#: font-browser.py:225
+msgid "Copy \"{}\" to clipboard"
+msgstr "Copia \"{}\""
+
+#: resources/font-browser.glade:52
+msgid "Copy font name"
+msgstr "Copiar nombre de fuente"
+
+#: resources/font-browser.glade:122
+msgid "S_ample text"
+msgstr "Texto de ejemplo"
+
+#: resources/font-browser.glade:163
+msgid "_Scale"
+msgstr "E_scala"
+
+#: resources/font-browser.glade:208
+msgid "_Only selected"
+msgstr "S_olo seleccionado"
+
+#: resources/font-browser.glade:223
+msgid "Show only fonts that have been selected in the first column below."
+msgstr ""
+"Mostrar solo las fuentes que se han seleccionado en la primera columna a "
+"continuación."
+
+#: resources/font-browser.glade:248
+msgid "Only show fonts that contain these words in the name."
+msgstr "Solo muestre las fuentes que contienen estas palabras en el nombre."
+
+#: resources/font-browser.glade:249
+msgid "Filter"
+msgstr "Filtrar"
+
+#: resources/font-browser.glade:321
+msgid "Name"
+msgstr "Nombre"
+
+#: resources/font-browser.glade:339 resources/font-browser.glade:504
+msgid "Sample"
+msgstr "Ejemplo"
+
+#: resources/font-browser.glade:368
+msgid "Fonts"
+msgstr "Fuente"
+
+#: resources/font-browser.glade:405
+msgid "_Text"
+msgstr "_Texto"
+
+#. This should be a pangram: a sentence showing every letter of the alphabet.
+#: resources/font-browser.glade:421
+msgid "The quick brown fox jumps over the lazy dog."
+msgstr ""
+"Benjamín pidió una bebida de kiwi y fresa; Noé, sin vergüenza, la más "
+"exquisita champaña del menú."
+
+#: resources/font-browser.glade:446
+msgid "Si_ze"
+msgstr "Tamaño"
+
+#: resources/font-browser.glade:530
+msgid "Comparison"
+msgstr "Comparación"
+
+#: resources/gtk/menus.ui:7
+msgid "_About"
+msgstr "_Sobre"
+
+#: resources/gtk/menus.ui:11
+msgid "_Quit"
+msgstr "Sali_r"
