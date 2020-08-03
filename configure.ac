@@ -9,7 +9,7 @@ AM_INIT_AUTOMAKE
 
 
 # Checks for programs.
-AM_PATH_PYTHON([3.7])
+#AM_PATH_PYTHON([3.7])
 
 AM_PO_SUBDIRS([po])
 AM_GNU_GETTEXT([external])

@@ -1,0 +1,22 @@
+[Desktop Entry]
+
+Name=Font Browser
+Name[pt_BR]=Navegador de Fontes
+
+Comment=Compare fonts side by side
+Comment[pt_BR]=Compare fontes lado a lado
+
+Keywords=font;fonts;
+Keywords[pt_BR]=fonte;fontes;
+
+Icon=font-browser.png
+
+Terminal=false
+
+Type=Application
+
+StartupNotify=true
+
+Categories=Utility;
+
+Exec=font-browser
