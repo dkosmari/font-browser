@@ -316,6 +316,35 @@ class Application(Gtk.Application):
         clipboard.set_text(self.selected_font_name, -1)
 
 
+    def on_bold_toggle_toggled(self, button: Gtk.ToggleButton):
+        active = button.get_active()
+        if active:
+            w = 800
+        else:
+            w = 400
+        self.gui.comp_text_cell.set_property("weight", w)
+        self.gui.comp_text_column.queue_resize()
+
+
+    def on_italic_toggle_toggled(self, button: Gtk.ToggleButton):
+        active = button.get_active()
+        if active:
+            s = Pango.Style.ITALIC
+        else:
+            s = Pango.Style.NORMAL
+        self.gui.comp_text_cell.set_property("style", s)
+        self.gui.comp_text_column.queue_resize()
+
+
+    def on_underline_toggle_toggled(self, button: Gtk.ToggleButton):
+        active = button.get_active()
+        if active:
+            u = Pango.Underline.SINGLE
+        else:
+            u = Pango.Underline.NONE
+        self.gui.comp_text_cell.set_property("underline", u)
+        self.gui.comp_text_column.queue_resize()
+
 
 if __name__ == "__main__":
     app = Application()

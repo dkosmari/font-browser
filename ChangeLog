@@ -2,6 +2,8 @@
 
 	* resources/font-browser.glade: added label to the filter entry
 	box.
+	* resources/font-browser.glade: added buttons to set bold, italic
+	and underline in comparison view.
 
 2020-08-02  gettextize  <bug-gnu-gettext@gnu.org>
 
