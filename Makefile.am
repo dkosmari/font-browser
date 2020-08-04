@@ -16,9 +16,9 @@ CLEANFILES = font-browser
 
 font-browser: $(srcdir)/font-browser.py Makefile
 	$(SED) \
-		-e 's|[@]prefix@|$(prefix)|g' \
 		-e 's|[@]localedir@|$(localedir)|g' \
 		-e 's|[@]pkgdatadir@|$(pkgdatadir)|g' \
+		-e 's|[@]PACKAGE_VERSION@|$(PACKAGE_VERSION)|g' \
 		< "$<" > "$@"
 
 

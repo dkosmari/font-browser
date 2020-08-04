@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: font-browser 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-04 02:51-0300\n"
+"POT-Creation-Date: 2020-08-04 03:47-0300\n"
 "PO-Revision-Date: 2020-08-03 04:17-0300\n"
 "Last-Translator: Daniel K. O. <nothing>\n"
 "Language-Team: Portuguese - Brazil <nothing>\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 "X-Generator: Gtranslator 3.32.1\n"
 
-#: font-browser.py:77 resources/font-browser.glade:81
+#: font-browser.py:82 resources/font-browser.glade:81
 msgid "Font Browser"
 msgstr "フォントブラウザ"
 
-#: font-browser.py:123
+#: font-browser.py:129
 msgid "Close"
 msgstr "閉めて"
 
-#: font-browser.py:236
+#: font-browser.py:242
 msgid "Copy \"{}\" to clipboard"
 msgstr "「{}」をクリップボードにコピー"
 

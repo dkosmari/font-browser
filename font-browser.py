@@ -27,9 +27,14 @@ if pkg_data_dir.startswith("@"):
 
 application_id = "org.example.font-browser"
 application_name = "font-browser"
+application_version = "@PACKAGE_VERSION@"
+if application_version.startswith("@"):
+    application_version = "unknown"
 
 
+locale.setlocale(locale.LC_ALL, "")
 locale.bindtextdomain(application_name, locale_dir)
+locale.textdomain(application_name)
 gettext.install(application_name, locale_dir)
 
 
@@ -120,6 +125,7 @@ class Application(Gtk.Application):
         self.gui.add(builder, "comp_tree_selection")
 
 
+        self.gui.about_dialog.set_version(application_version)
         self.gui.about_dialog.add_button(_("Close"), Gtk.ResponseType.CLOSE)
 
         # sets custom filtering function
