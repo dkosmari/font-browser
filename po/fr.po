@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: font-browser 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-04 02:51-0300\n"
-"PO-Revision-Date: 2020-08-03 03:50-0300\n"
+"PO-Revision-Date: 2020-08-04 03:15-0300\n"
 "Last-Translator: Daniel K. O. <nothing>\n"
 "Language-Team: Portuguese - Brazil <nothing>\n"
-"Language: fr\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -52,9 +52,8 @@ msgstr ""
 "N'afficher que les polices sélectionnées dans la première colonne ci-dessous."
 
 #: resources/font-browser.glade:250
-#, fuzzy
 msgid "_Filter"
-msgstr "Filtre"
+msgstr "_Filtre"
 
 #: resources/font-browser.glade:267
 msgid "Only show fonts that contain these words in the name."
@@ -91,113 +90,112 @@ msgstr "Taille"
 
 #: resources/font-browser.glade:504 resources/font-browser.glade:562
 msgid "Bold"
-msgstr ""
+msgstr "Gras"
 
 #: resources/font-browser.glade:518 resources/font-browser.glade:583
 msgid "Italic"
-msgstr ""
+msgstr "Italique"
 
 #: resources/font-browser.glade:532
 msgid "Underline"
-msgstr ""
+msgstr "Souligner"
 
 #: resources/font-browser.glade:554
-#, fuzzy
 msgid "Font weight"
-msgstr "Navigateur de Polices"
+msgstr "Poids de la police"
 
 #: resources/font-browser.glade:556
 msgid "Thin"
-msgstr ""
+msgstr "Fine"
 
 #: resources/font-browser.glade:557
 msgid "Ultra light"
-msgstr ""
+msgstr "Ultra légère"
 
 #: resources/font-browser.glade:558
 msgid "Light"
-msgstr ""
+msgstr "Légère"
 
 #: resources/font-browser.glade:559 resources/font-browser.glade:581
 #: resources/font-browser.glade:623
 msgid "Normal"
-msgstr ""
+msgstr "Normale"
 
 #: resources/font-browser.glade:560
 msgid "Medium"
-msgstr ""
+msgstr "Moyenne"
 
 #: resources/font-browser.glade:561
 msgid "Semi bold"
-msgstr ""
+msgstr "Semi-grasse"
 
 #: resources/font-browser.glade:563
 msgid "Ultra bold"
-msgstr ""
+msgstr "Ultra gras"
 
 #: resources/font-browser.glade:564
 msgid "Heavy"
-msgstr ""
+msgstr "Épaisse"
 
 #: resources/font-browser.glade:565
 msgid "Ultra heavy"
-msgstr ""
+msgstr "Ultra épaisse"
 
 #: resources/font-browser.glade:582
 msgid "Oblique"
-msgstr ""
+msgstr "Oblique"
 
 #: resources/font-browser.glade:599
 msgid "None"
-msgstr ""
+msgstr "Rien"
 
 #: resources/font-browser.glade:600
 msgid "Single"
-msgstr ""
+msgstr "Seule"
 
 #: resources/font-browser.glade:601
 msgid "Double"
-msgstr ""
+msgstr "Double"
 
 #: resources/font-browser.glade:602
 msgid "Low"
-msgstr ""
+msgstr "Basse"
 
 #: resources/font-browser.glade:603
 msgid "Error"
-msgstr ""
+msgstr "Erreur"
 
 #: resources/font-browser.glade:619
 msgid "Ultra condensed"
-msgstr ""
+msgstr "Ultra condensé"
 
 #: resources/font-browser.glade:620
 msgid "Extra condensed"
-msgstr ""
+msgstr "Extra condensé"
 
 #: resources/font-browser.glade:621
 msgid "Condensed"
-msgstr ""
+msgstr "Condensé"
 
 #: resources/font-browser.glade:622
 msgid "Semi condensed"
-msgstr ""
+msgstr "Semi condensé"
 
 #: resources/font-browser.glade:624
 msgid "Semi expanded"
-msgstr ""
+msgstr "Semi expansé"
 
 #: resources/font-browser.glade:625
 msgid "Expanded"
-msgstr ""
+msgstr "Expansé"
 
 #: resources/font-browser.glade:626
 msgid "Extra expanded"
-msgstr ""
+msgstr "Extra expansé"
 
 #: resources/font-browser.glade:627
 msgid "Ultra expanded"
-msgstr ""
+msgstr "Ultra expansé"
 
 #: resources/font-browser.glade:714
 msgid "Comparison"
