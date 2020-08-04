@@ -34,12 +34,12 @@ gettext.install(application_name, locale_dir)
 
 
 
-# column IDs for fonts_list
+# column IDs for fonts_list model
 FONTS_LIST_COL_FONT_FAMILY_NAME = 0
 FONTS_LIST_COL_FONT_FAMILY = 1
 FONTS_LIST_COL_SELECTED = 2
 
-# column IDs for comp_list
+# column IDs for comp_list model
 COMP_LIST_COL_FONT_FAMILY_NAME = 0
 
 
@@ -80,6 +80,7 @@ class Application(Gtk.Application):
         self.search_tokens = []
         self.selected_font_name = ""
         self.font_reloader_source = None # source for idle callback to load fonts
+        self.reordered_path = None
 
         resource = Gio.Resource.load(pkg_data_dir + "/font-browser.gresource")
         Gio.resources_register(resource)
@@ -110,6 +111,7 @@ class Application(Gtk.Application):
         self.gui.add(builder, "fonts_sample_cell")
         self.gui.add(builder, "fonts_list_filter")
         self.gui.add(builder, "comp_text_cell")
+        self.gui.add(builder, "comp_tree_selection")
 
 
         self.gui.about_dialog.add_button(_("Close"), Gtk.ResponseType.CLOSE)
@@ -344,6 +346,25 @@ class Application(Gtk.Application):
             u = Pango.Underline.NONE
         self.gui.comp_text_cell.set_property("underline", u)
         self.gui.comp_text_column.queue_resize()
+
+
+    def on_comp_list_row_inserted(self,
+                                  model: Gtk.ListStore,
+                                  path: Gtk.TreePath,
+                                  iter: Gtk.TreeIter):
+        if model[path][0] == None:
+            # the user is reordering rows
+            self.reordered_path = path
+
+
+    def on_comp_list_row_deleted(self,
+                                 model: Gtk.ListStore,
+                                 path: Gtk.TreePath):
+        if self.reordered_path is not None:
+            self.gui.comp_tree_selection.select_path(self.reordered_path)
+            self.reordered_path = None
+
+
 
 
 if __name__ == "__main__":

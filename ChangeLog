@@ -1,9 +1,10 @@
 2020-08-02  Daniel K. O.  <>
 
-	* resources/font-browser.glade: added label to the filter entry
-	box.
-	* resources/font-browser.glade: added buttons to set bold, italic
-	and underline in comparison view.
+	- added label to the filter entry box.
+	- added buttons to set bold, italic and underline in comparison
+	view.
+	- added font name column to comparison list.
+	- select comparison row when reordering.
 
 2020-08-02  gettextize  <bug-gnu-gettext@gnu.org>
 
