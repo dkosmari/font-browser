@@ -84,7 +84,6 @@ class Application(Gtk.Application):
         self.selected_font_name = ""
         # source for idle callback to load fonts
         self.font_reloader_source = None
-        self.reordered_path = None
 
         # flag to avoid mutual recursion when changing bold/weight attribute
         self.updating_weight = False
@@ -224,30 +223,25 @@ class Application(Gtk.Application):
             self.remove_comparison(font_family_name)
 
 
-    def do_fonts_popup_menu(self, event, is_pointer):
-        sel = self.gui.fonts_tree_view.get_selection()
+    def do_copy_font_popup_menu(self,
+                                event: Gdk.Event,
+                                tree: Gtk.TreeView):
+        sel = tree.get_selection()
         model, iter = sel.get_selected()
         if model is None or iter is None:
             return False
         row = model[iter]
-        self.selected_font_name = row[FONTS_LIST_COL_FONT_FAMILY_NAME]
+        # both models have font family name on the first column
+        self.selected_font_name = row[0]
         label = _('Copy "{}" to clipboard').format(self.selected_font_name)
         self.gui.copy_font_name_entry.set_label(label)
 
         if event is not None:
             event_time = event.get_time()
-            button = event.button
         else:
             event_time = Gtk.get_current_event_time()
-            button = 0
 
-        if is_pointer:
-            self.gui.fonts_context_menu.popup_at_pointer(event)
-        else:
-            self.gui.fonts_context_menu.popup_at_widget(self.gui.fonts_tree_view,
-                                                        Gdk.Gravity.NORTH_WEST,
-                                                        Gdk.Gravity.NORTH_WEST,
-                                                        event)
+        self.gui.fonts_context_menu.popup_at_pointer(event)
         return True
 
 
@@ -313,13 +307,29 @@ class Application(Gtk.Application):
                                               tree: Gtk.TreeView,
                                               event: Gdk.EventButton):
         if event.triggers_context_menu() \
-            and event.type == Gdk.EventType.BUTTON_PRESS:
-            return self.do_fonts_popup_menu(event, True)
+          and event.type == Gdk.EventType.BUTTON_PRESS:
+            return self.do_copy_font_popup_menu(event, tree)
         return False
 
 
-    def on_fonts_tree_view_popup_menu(self, widget: Gtk.TreeView):
-        return self.do_fonts_popup_menu(None, True)
+    # same for comparison view
+    def on_comp_tree_view_button_press_event(self,
+                                             tree: Gtk.TreeView,
+                                             event: Gdk.EventButton):
+        if event.triggers_context_menu() \
+          and event.type == Gdk.EventType.BUTTON_PRESS:
+            return self.do_copy_font_popup_menu(event, tree)
+        return False
+
+
+    # handle popup menu key
+    def on_fonts_tree_view_popup_menu(self, tree: Gtk.TreeView):
+        return self.do_copy_font_popup_menu(None, tree)
+
+
+    # same for comparison view
+    def on_comp_tree_view_popup_menu(self, tree: Gtk.TreeView):
+        return self.do_copy_font_popup_menu(None, tree)
 
 
     def on_comp_text_entry_changed(self, editable: Gtk.Editable):
@@ -440,21 +450,9 @@ class Application(Gtk.Application):
                                   model: Gtk.ListStore,
                                   path: Gtk.TreePath,
                                   iter: Gtk.TreeIter):
-        if model[path][0] == None:
-            # the user is reordering rows
-            self.reordered_path = path
-        else:
+        if model[path][0] is not None:
             # new entry was appended, scroll to it
             self.gui.comp_tree_view.scroll_to_cell(path, None, False, 0, 0)
-
-
-    def on_comp_list_row_deleted(self,
-                                 model: Gtk.ListStore,
-                                 path: Gtk.TreePath):
-        if self.reordered_path is not None:
-            self.gui.comp_tree_selection.select_path(self.reordered_path)
-            self.reordered_path = None
-
 
 
 
