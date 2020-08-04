@@ -319,9 +319,9 @@ class Application(Gtk.Application):
     def on_bold_toggle_toggled(self, button: Gtk.ToggleButton):
         active = button.get_active()
         if active:
-            w = 800
+            w = Pango.Weight.BOLD
         else:
-            w = 400
+            w = Pango.Weight.NORMAL
         self.gui.comp_text_cell.set_property("weight", w)
         self.gui.comp_text_column.queue_resize()
 
