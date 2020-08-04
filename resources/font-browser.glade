@@ -80,10 +80,10 @@ Author: Daniel K. O.
   <object class="GtkApplicationWindow" id="main_window">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Font Browser</property>
-    <property name="default_width">1100</property>
+    <property name="default_width">1200</property>
     <property name="default_height">700</property>
+    <property name="hide_titlebar_when_maximized">True</property>
     <property name="icon">icons/logo-64.png</property>
-    <property name="show_menubar">False</property>
     <child>
       <placeholder/>
     </child>
@@ -495,51 +495,143 @@ Author: Daniel K. O.
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkToggleButton" id="bold_toggle">
-                            <property name="label">gtk-bold</property>
+                          <object class="GtkToolbar">
                             <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="receives_default">True</property>
-                            <property name="use_stock">True</property>
-                            <property name="always_show_image">True</property>
-                            <signal name="toggled" handler="on_bold_toggle_toggled" swapped="no"/>
+                            <property name="can_focus">False</property>
+                            <property name="show_arrow">False</property>
+                            <child>
+                              <object class="GtkToggleToolButton" id="bold_toggle">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Bold</property>
+                                <property name="use_underline">True</property>
+                                <property name="stock_id">gtk-bold</property>
+                                <signal name="toggled" handler="on_bold_toggle_toggled" swapped="no"/>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="homogeneous">True</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkToggleToolButton" id="italic_toggle">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Italic</property>
+                                <property name="use_underline">True</property>
+                                <property name="stock_id">gtk-italic</property>
+                                <signal name="toggled" handler="on_italic_toggle_toggled" swapped="no"/>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="homogeneous">True</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkToggleToolButton" id="underline_toggle">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Underline</property>
+                                <property name="use_underline">True</property>
+                                <property name="stock_id">gtk-underline</property>
+                                <signal name="toggled" handler="on_underline_toggle_toggled" swapped="no"/>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="homogeneous">True</property>
+                              </packing>
+                            </child>
                           </object>
                           <packing>
                             <property name="expand">False</property>
-                            <property name="fill">False</property>
+                            <property name="fill">True</property>
                             <property name="position">2</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkToggleButton" id="italic_toggle">
-                            <property name="label">gtk-italic</property>
+                          <object class="GtkComboBoxText" id="weight_combo">
                             <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="receives_default">True</property>
-                            <property name="use_stock">True</property>
-                            <property name="always_show_image">True</property>
-                            <signal name="toggled" handler="on_italic_toggle_toggled" swapped="no"/>
+                            <property name="can_focus">False</property>
+                            <property name="active">3</property>
+                            <items>
+                              <item id="100" translatable="yes">Thin</item>
+                              <item id="200" translatable="yes">Ultra light</item>
+                              <item id="300" translatable="yes">Light</item>
+                              <item id="400" translatable="yes">Normal</item>
+                              <item id="500" translatable="yes">Medium</item>
+                              <item id="600" translatable="yes">Semi bold</item>
+                              <item id="700" translatable="yes">Bold</item>
+                              <item id="800" translatable="yes">Ultra bold</item>
+                              <item id="900" translatable="yes">Heavy</item>
+                              <item id="1000" translatable="yes">Ultra heavy</item>
+                            </items>
+                            <signal name="changed" handler="on_weight_combo_changed" swapped="no"/>
                           </object>
                           <packing>
                             <property name="expand">False</property>
-                            <property name="fill">False</property>
+                            <property name="fill">True</property>
                             <property name="position">3</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkToggleButton" id="underline_toggle">
-                            <property name="label">gtk-underline</property>
+                          <object class="GtkComboBoxText" id="style_combo">
                             <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="receives_default">True</property>
-                            <property name="use_stock">True</property>
-                            <property name="always_show_image">True</property>
-                            <signal name="toggled" handler="on_underline_toggle_toggled" swapped="no"/>
+                            <property name="can_focus">False</property>
+                            <property name="active">0</property>
+                            <items>
+                              <item id="0" translatable="yes">Normal</item>
+                              <item id="1" translatable="yes">Oblique</item>
+                              <item id="2" translatable="yes">Italic</item>
+                            </items>
+                            <signal name="changed" handler="on_style_combo_changed" swapped="no"/>
                           </object>
                           <packing>
                             <property name="expand">False</property>
-                            <property name="fill">False</property>
+                            <property name="fill">True</property>
                             <property name="position">4</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkComboBoxText" id="underline_combo">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="active">0</property>
+                            <items>
+                              <item id="0" translatable="yes">None</item>
+                              <item id="1" translatable="yes">Single</item>
+                              <item id="2" translatable="yes">Double</item>
+                              <item id="3" translatable="yes">Low</item>
+                              <item id="4" translatable="yes">Error</item>
+                            </items>
+                            <signal name="changed" handler="on_underline_combo_changed" swapped="no"/>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">5</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkComboBoxText" id="stretch_combo">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="active">4</property>
+                            <items>
+                              <item id="0" translatable="yes">Ultra condensed</item>
+                              <item id="1" translatable="yes">Extra condensed</item>
+                              <item id="2" translatable="yes">Condensed</item>
+                              <item id="3" translatable="yes">Semi condensed</item>
+                              <item id="4" translatable="yes">Normal</item>
+                              <item id="5" translatable="yes">Semi expanded</item>
+                              <item id="6" translatable="yes">Expanded</item>
+                              <item id="7" translatable="yes">Extra expanded</item>
+                              <item id="8" translatable="yes">Ultra expanded</item>
+                            </items>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">6</property>
                           </packing>
                         </child>
                       </object>
@@ -560,6 +652,7 @@ Author: Daniel K. O.
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="model">comp_list</property>
+                            <property name="headers_clickable">False</property>
                             <property name="reorderable">True</property>
                             <property name="search_column">0</property>
                             <property name="show_expanders">False</property>
@@ -570,12 +663,15 @@ Author: Daniel K. O.
                             </child>
                             <child>
                               <object class="GtkTreeViewColumn" id="comp_name_column">
-                                <property name="sizing">autosize</property>
-                                <property name="max_width">150</property>
+                                <property name="resizable">True</property>
+                                <property name="spacing">6</property>
+                                <property name="sizing">fixed</property>
+                                <property name="fixed_width">150</property>
+                                <property name="min_width">100</property>
                                 <property name="title" translatable="yes">Name</property>
                                 <child>
                                   <object class="GtkCellRendererText" id="comp_name_cell">
-                                    <property name="wrap_mode">word-char</property>
+                                    <property name="ellipsize">end</property>
                                   </object>
                                   <attributes>
                                     <attribute name="text">0</attribute>

@@ -68,6 +68,9 @@ class GUI:
 class Application(Gtk.Application):
 
     def __init__(self, *args, **kwargs):
+        resource = Gio.Resource.load(pkg_data_dir + "/font-browser.gresource")
+        Gio.resources_register(resource)
+
         super().__init__(*args, application_id=application_id,
                          flags=Gio.ApplicationFlags.FLAGS_NONE,
                          **kwargs)
@@ -79,12 +82,16 @@ class Application(Gtk.Application):
         self.show_only_selected = False
         self.search_tokens = []
         self.selected_font_name = ""
-        self.font_reloader_source = None # source for idle callback to load fonts
+        # source for idle callback to load fonts
+        self.font_reloader_source = None
         self.reordered_path = None
 
-        resource = Gio.Resource.load(pkg_data_dir + "/font-browser.gresource")
-        Gio.resources_register(resource)
-
+        # flag to avoid mutual recursion when changing bold/weight attribute
+        self.updating_weight = False
+        # same for italic attribute
+        self.updating_style = False
+        # and for underline
+        self.updating_underline = False
 
 
     def do_startup(self):
@@ -244,10 +251,16 @@ class Application(Gtk.Application):
         return True
 
 
+    # sets new Pango property and queue a resize/redraw
+    def update_comparison(self, property, value):
+        self.gui.comp_text_cell.set_property(property, value)
+        self.gui.comp_text_column.queue_resize()
 
-    ##################
-    # Event handlers #
-    ##################
+
+    ####################
+    ## Event handlers ##
+    ####################
+
 
     def on_quit(self, action, param):
         self.quit()
@@ -270,7 +283,9 @@ class Application(Gtk.Application):
         self.gui.fonts_sample_column.queue_resize()
 
 
-    def on_only_selected_switch_state_set(self, switch: Gtk.Switch, new_value):
+    def on_only_selected_switch_state_set(self,
+                                          switch: Gtk.Switch,
+                                          new_value: bool):
         self.show_only_selected = new_value
         self.refilter()
         return False # False means "don't stop normal behavior"
@@ -286,18 +301,24 @@ class Application(Gtk.Application):
         self.reload_fonts()
 
 
-    def on_fonts_tree_view_row_activated(self, tree_view, path, column):
-        self.toggle_font_selection(tree_view.get_model()[path])
+    def on_fonts_tree_view_row_activated(self,
+                                         tree: Gtk.TreeView,
+                                         path: Gtk.TreePath,
+                                         column: Gtk.TreeViewColumn):
+        self.toggle_font_selection(tree.get_model()[path])
 
 
     # handle right-click context menu
-    def on_fonts_tree_view_button_press_event(self, widget, event : Gdk.EventButton):
-        if event.triggers_context_menu() and event.type == Gdk.EventType.BUTTON_PRESS:
+    def on_fonts_tree_view_button_press_event(self,
+                                              tree: Gtk.TreeView,
+                                              event: Gdk.EventButton):
+        if event.triggers_context_menu() \
+            and event.type == Gdk.EventType.BUTTON_PRESS:
             return self.do_fonts_popup_menu(event, True)
         return False
 
 
-    def on_fonts_tree_view_popup_menu(self, widget):
+    def on_fonts_tree_view_popup_menu(self, widget: Gtk.TreeView):
         return self.do_fonts_popup_menu(None, True)
 
 
@@ -307,45 +328,112 @@ class Application(Gtk.Application):
         self.gui.comp_text_column.queue_resize()
 
 
-    def on_comp_size_spin_changed(self, spin):
+    def on_comp_size_spin_changed(self, spin: Gtk.SpinButton):
         size = spin.get_value()
         self.gui.comp_text_cell.set_property("size-points", size)
         self.gui.comp_text_column.queue_resize()
 
 
-    def on_copy_font_name_entry_activate(self, menu_item):
+    def on_copy_font_name_entry_activate(self, item: Gtk.MenuItem):
         clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
         clipboard.set_text(self.selected_font_name, -1)
 
 
-    def on_bold_toggle_toggled(self, button: Gtk.ToggleButton):
-        active = button.get_active()
-        if active:
-            w = Pango.Weight.BOLD
-        else:
-            w = Pango.Weight.NORMAL
-        self.gui.comp_text_cell.set_property("weight", w)
-        self.gui.comp_text_column.queue_resize()
+    def on_bold_toggle_toggled(self, button: Gtk.ToggleToolButton):
+        if self.updating_weight:
+            # do nothing when the weight combo is doing it
+            return
+        try:
+            self.updating_weight = True
+            active = button.get_active()
+            if active:
+                w = Pango.Weight.BOLD
+            else:
+                w = Pango.Weight.NORMAL
+            self.gui.weight_combo.set_active_id(str(int(w)))
+            self.update_comparison("weight", w)
+        finally:
+            self.updating_weight = False
 
 
-    def on_italic_toggle_toggled(self, button: Gtk.ToggleButton):
-        active = button.get_active()
-        if active:
-            s = Pango.Style.ITALIC
-        else:
-            s = Pango.Style.NORMAL
-        self.gui.comp_text_cell.set_property("style", s)
-        self.gui.comp_text_column.queue_resize()
+    def on_weight_combo_changed(self, combo: Gtk.ComboBoxText):
+        if self.updating_weight:
+            # do nothing when the bold toggle is doing it
+            return
+        try:
+            self.updating_weight = True
+            active = combo.get_active_id()
+            w = Pango.Weight(int(active))
+            self.gui.bold_toggle.set_active(w > Pango.Weight.MEDIUM)
+            self.update_comparison("weight", w)
+        finally:
+            self.updating_weight = False
 
 
-    def on_underline_toggle_toggled(self, button: Gtk.ToggleButton):
-        active = button.get_active()
-        if active:
-            u = Pango.Underline.SINGLE
-        else:
-            u = Pango.Underline.NONE
-        self.gui.comp_text_cell.set_property("underline", u)
-        self.gui.comp_text_column.queue_resize()
+    def on_italic_toggle_toggled(self, button: Gtk.ToggleToolButton):
+        if self.updating_style:
+            # do nothing when the italic combo is doing it
+            return
+        try:
+            self.updating_style = True
+            if button.get_active():
+                s = Pango.Style.ITALIC
+            else:
+                s = Pango.Style.NORMAL
+            self.gui.style_combo.set_active_id(str(int(s)))
+            self.update_comparison("style", s)
+        finally:
+            self.updating_style = False
+
+
+    def on_style_combo_changed(self, combo: Gtk.ComboBoxText):
+        if self.updating_style:
+            # do nothing when the italic toggle is doing it
+            return
+        try:
+            self.updating_style = True
+            active = combo.get_active_id()
+            s = Pango.Style(int(active))
+            self.gui.italic_toggle.set_active(s > Pango.Style.NORMAL)
+            self.update_comparison("style", s)
+        finally:
+            self.updating_style = False
+
+
+    def on_underline_toggle_toggled(self, button: Gtk.ToggleToolButton):
+        if self.updating_underline:
+            # do nothing when the underline combo is doing it
+            return
+        try:
+            self.updating_underline = True
+            if button.get_active():
+                u = Pango.Underline.SINGLE
+            else:
+                u = Pango.Underline.NONE
+            self.gui.underline_combo.set_active_id(str(int(u)))
+            self.update_comparison("underline", u)
+        finally:
+            self.updating_underline = False
+
+
+    def on_underline_combo_changed(self, combo: Gtk.ComboBoxText):
+        if self.updating_underline:
+            # do nothing when the underline toggle is doing it
+            return
+        try:
+            self.updating_underline = True
+            active = combo.get_active_id()
+            u = Pango.Underline(int(active))
+            self.gui.underline_toggle.set_active(u > Pango.Underline.NONE)
+            self.update_comparison("underline", u)
+        finally:
+            self.updating_underline = False
+
+
+    def on_stretch_combo_changed(self, combo: Gtk.ComboBoxText):
+        active = combo.get_active_id()
+        s = Pango.Stretch(int(active))
+        self.update_comparison("stretch", s)
 
 
     def on_comp_list_row_inserted(self,
@@ -355,6 +443,9 @@ class Application(Gtk.Application):
         if model[path][0] == None:
             # the user is reordering rows
             self.reordered_path = path
+        else:
+            # new entry was appended, scroll to it
+            self.gui.comp_tree_view.scroll_to_cell(path, None, False, 0, 0)
 
 
     def on_comp_list_row_deleted(self,

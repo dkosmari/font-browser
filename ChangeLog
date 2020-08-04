@@ -3,6 +3,8 @@
 	- added label to the filter entry box.
 	- added buttons to set bold, italic and underline in comparison
 	view.
+	- added combo boxes to fine tune weight, style, underline and
+	stretch, for fonts that support it.
 	- added font name column to comparison list.
 	- select comparison row when reordering.
 
