@@ -10,9 +10,21 @@ Font Browser does just that. It lists all installed fonts, and allows you to see
 rendered with multiple fonts. Adjust size, styles, drag the rendered text up and down.
 
 
-Building
-========
+Requisites
+----------
 
+  - Python 3
+  
+  - GTK+ 3
+  
+  - gobject-introspection
+  
+  - Python bindings for GObject (usually in a package named python3-gobject or just
+    python-gobject)
+
+
+Building
+--------
 
 In a shell, run:
 
@@ -27,10 +39,10 @@ install it.
 
 
 Installing
-==========
+----------
 
 To install, after building:
 
     sudo make install
 
-
+See the file `INSTALL` for more details.
