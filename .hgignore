@@ -4,6 +4,7 @@ syntax: glob
 *.gresource
 *~
 .deps
+ABOUT-NLS
 aclocal.m4
 autom4te.cache
 build-aux
