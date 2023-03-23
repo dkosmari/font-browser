@@ -1,8 +1,8 @@
 Font Browser - view and compare fonts
 =========================================================
 
-If you ever felt the need to compare the same text, side-by-side, in different fonts, to
-see which looks better?
+Have you ever felt the need to compare the same text, side-by-side, in different fonts, to
+see which one looks better?
 
 ![Font Browser main window](resources/screenshots/font-browser.png)
 
