@@ -6,6 +6,7 @@ EXTRA_DIST = \
 	font-browser.gresource.xml \
 	font-browser.png \
 	font-browser.py \
+	README.md \
 	resources
 
 SUBDIRS = po
@@ -20,6 +21,7 @@ font-browser: $(srcdir)/font-browser.py Makefile
 		-e 's|[@]pkgdatadir@|$(pkgdatadir)|g' \
 		-e 's|[@]PACKAGE_VERSION@|$(PACKAGE_VERSION)|g' \
 		< "$<" > "$@"
+	chmod +x $@
 
 
 GRESOURCE_FILE = font-browser.gresource
