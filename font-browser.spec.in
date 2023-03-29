@@ -5,15 +5,23 @@
 Name:           %{name}
 Version:        %{version}
 Release:        %{release}
-BuildArch:      noarch
-Source0:        @TARBALL_NAME@
-License:        GPLv3+
-Group:          Graphical desktop/Other
-Url:            http://github.com/dkosmari/font-browser
-Requires:       python3
-Requires:       typelib(Gtk) = 3.0
-BuildRequires:  gettext
 Summary:        A tool to compare fonts.
+
+License:        GPLv3+
+Url:            http://github.com/dkosmari/font-browser
+Source0:        @TARBALL_NAME@
+
+BuildArch:      noarch
+Group:          Graphical desktop/Other
+
+BuildRequires:  intltool
+BuildRequires:  pkgconfig(python3)
+
+AutoReq:        no
+Requires:       python3dist(pygobject)
+Requires:       typelib(Gdk) = 3.0
+Requires:       typelib(Gtk) = 3.0
+Requires:       typelib(PangoCairo) = 1.0
 
 
 %description
@@ -22,14 +30,12 @@ A graphical application to view and compare installed fonts.
 %prep
 %autosetup
 
-%configure
-
 %build
+%configure
 %make_build
 
-%check
-
 %install
+rm -rf $RPM_BUILD_ROOT
 %make_install
 
 %find_lang %{name}

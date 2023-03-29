@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/org/example/font-browser">
+  <gresource prefix="/com/github/dkosmari/font-browser">
     <file>icons/logo-64.png</file>
     <file>icons/logo-256.png</file>
     <file>gtk/menus.ui</file>

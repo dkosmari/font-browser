@@ -15,7 +15,6 @@ config.status
 configure
 destdir
 font-browser
-m4
 Makefile
 Makefile.in
 po/boldquot.sed

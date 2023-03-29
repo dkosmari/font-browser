@@ -25,7 +25,7 @@ if pkg_data_dir.startswith("@"):
     pkg_data_dir = bin_location
 
 
-application_id = "org.example.font-browser"
+application_id = "com.github.dkosmari.font-browser"
 application_name = "font-browser"
 application_version = "@PACKAGE_VERSION@"
 if application_version.startswith("@"):

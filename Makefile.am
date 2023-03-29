@@ -1,4 +1,7 @@
+# .
+
 ACLOCAL_AMFLAGS = -I m4
+
 
 EXTRA_DIST = \
 	bootstrap \
@@ -10,7 +13,9 @@ EXTRA_DIST = \
 	README.md \
 	resources
 
+
 SUBDIRS = po
+
 
 dist_bin_SCRIPTS = font-browser
 BUILT_SOURCES = font-browser
@@ -53,12 +58,12 @@ icondir = $(datadir)/icons
 icon_DATA = font-browser.png
 
 
-.PHONY: rpm
-
 RPM_TARBALL_NAME = $(HOME)/rpmbuild/SOURCES/$(TARBALL_NAME)
 
+.PHONY: rpm
+
 rpm: font-browser.spec dist-gzip
-	 [ -e $(RPM_TARBALL_NAME) ] || \
-		$(LN_S) $(PWD)/$(TARBALL_NAME) $(RPM_TARBALL_NAME)
+	[ -e $(RPM_TARBALL_NAME) ] || \
+		$(LN_S) $(top_builddir)/$(TARBALL_NAME) $(RPM_TARBALL_NAME)
 	rpmbuild -ba $<
 
