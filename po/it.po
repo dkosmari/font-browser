@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: font-browser 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-29 10:05-0300\n"
+"POT-Creation-Date: 2023-03-29 17:56-0300\n"
 "PO-Revision-Date: 2020-08-04 03:20-0300\n"
 "Last-Translator: Daniel K. O. <nothing>\n"
 "Language-Team: Portuguese - Brazil <nothing>\n"
@@ -34,171 +34,171 @@ msgstr "Copia \"{}\" negli appunti"
 msgid "Copy font name"
 msgstr "Copia il nome del font"
 
-#: resources/font-browser.glade:124
+#: resources/font-browser.glade:121
 msgid "S_ample text"
 msgstr "Testo di esempio"
 
-#: resources/font-browser.glade:165
+#: resources/font-browser.glade:162
 msgid "_Scale"
 msgstr "_Scala"
 
-#: resources/font-browser.glade:210
+#: resources/font-browser.glade:207
 msgid "_Only selected"
 msgstr "Mostra s_olo selezionati"
 
-#: resources/font-browser.glade:225
+#: resources/font-browser.glade:222
 msgid "Show only fonts that have been selected in the first column below."
 msgstr ""
 "Mostra solo i caratteri che sono stati selezionati nella prima colonna in "
 "basso."
 
-#: resources/font-browser.glade:250
+#: resources/font-browser.glade:247
 msgid "_Filter"
 msgstr "_Filtro"
 
-#: resources/font-browser.glade:267
+#: resources/font-browser.glade:264
 msgid "Only show fonts that contain these words in the name."
 msgstr "Mostra solo i caratteri che contengono queste parole nel nome."
 
-#: resources/font-browser.glade:268
+#: resources/font-browser.glade:265
 msgid "Filter"
 msgstr "Filtro"
 
-#: resources/font-browser.glade:343 resources/font-browser.glade:674
+#: resources/font-browser.glade:340 resources/font-browser.glade:671
 msgid "Name"
 msgstr "Nome"
 
-#: resources/font-browser.glade:361 resources/font-browser.glade:688
+#: resources/font-browser.glade:358 resources/font-browser.glade:685
 msgid "Sample"
 msgstr "Esempio"
 
-#: resources/font-browser.glade:390
+#: resources/font-browser.glade:387
 msgid "Fonts"
 msgstr "Caratteri"
 
-#: resources/font-browser.glade:427
+#: resources/font-browser.glade:424
 msgid "_Text"
 msgstr "Testo"
 
 #. This should be a pangram: a sentence showing every letter of the alphabet.
-#: resources/font-browser.glade:443
+#: resources/font-browser.glade:440
 msgid "The quick brown fox jumps over the lazy dog."
 msgstr "Qualche vago ione tipo zolfo, bromo, sodio."
 
-#: resources/font-browser.glade:468
+#: resources/font-browser.glade:465
 msgid "Si_ze"
 msgstr "Dimensione"
 
-#: resources/font-browser.glade:504 resources/font-browser.glade:562
+#: resources/font-browser.glade:501 resources/font-browser.glade:559
 msgid "Bold"
 msgstr "Grassetto"
 
-#: resources/font-browser.glade:518 resources/font-browser.glade:583
+#: resources/font-browser.glade:515 resources/font-browser.glade:580
 msgid "Italic"
 msgstr "Corsivo"
 
-#: resources/font-browser.glade:532
+#: resources/font-browser.glade:529
 msgid "Underline"
 msgstr "Sottolineare"
 
-#: resources/font-browser.glade:554
+#: resources/font-browser.glade:551
 msgid "Font weight"
 msgstr "Peso del carattere"
 
-#: resources/font-browser.glade:556
+#: resources/font-browser.glade:553
 msgid "Thin"
 msgstr "Sottile"
 
-#: resources/font-browser.glade:557
+#: resources/font-browser.glade:554
 msgid "Ultra light"
 msgstr "Ultra leggero"
 
-#: resources/font-browser.glade:558
+#: resources/font-browser.glade:555
 msgid "Light"
 msgstr "Leggero"
 
-#: resources/font-browser.glade:559 resources/font-browser.glade:581
-#: resources/font-browser.glade:623
+#: resources/font-browser.glade:556 resources/font-browser.glade:578
+#: resources/font-browser.glade:620
 msgid "Normal"
 msgstr "Normale"
 
-#: resources/font-browser.glade:560
+#: resources/font-browser.glade:557
 msgid "Medium"
 msgstr "Medio"
 
-#: resources/font-browser.glade:561
+#: resources/font-browser.glade:558
 msgid "Semi bold"
 msgstr "Semi grassetto"
 
-#: resources/font-browser.glade:563
+#: resources/font-browser.glade:560
 msgid "Ultra bold"
 msgstr "Ultra grassetto"
 
-#: resources/font-browser.glade:564
+#: resources/font-browser.glade:561
 msgid "Heavy"
 msgstr "Pesante"
 
-#: resources/font-browser.glade:565
+#: resources/font-browser.glade:562
 msgid "Ultra heavy"
 msgstr "Ultra pesante"
 
-#: resources/font-browser.glade:582
+#: resources/font-browser.glade:579
 msgid "Oblique"
 msgstr "Obliquo"
 
-#: resources/font-browser.glade:599
+#: resources/font-browser.glade:596
 msgid "None"
 msgstr "Niente"
 
-#: resources/font-browser.glade:600
+#: resources/font-browser.glade:597
 msgid "Single"
 msgstr "Singola"
 
-#: resources/font-browser.glade:601
+#: resources/font-browser.glade:598
 msgid "Double"
 msgstr "Doppia"
 
-#: resources/font-browser.glade:602
+#: resources/font-browser.glade:599
 msgid "Low"
 msgstr "Bassa"
 
-#: resources/font-browser.glade:603
+#: resources/font-browser.glade:600
 msgid "Error"
 msgstr "Errore"
 
-#: resources/font-browser.glade:619
+#: resources/font-browser.glade:616
 msgid "Ultra condensed"
 msgstr "Ultra condensato"
 
-#: resources/font-browser.glade:620
+#: resources/font-browser.glade:617
 msgid "Extra condensed"
 msgstr "Extra condensato"
 
-#: resources/font-browser.glade:621
+#: resources/font-browser.glade:618
 msgid "Condensed"
 msgstr "Condensato"
 
-#: resources/font-browser.glade:622
+#: resources/font-browser.glade:619
 msgid "Semi condensed"
 msgstr "Semi condensato"
 
-#: resources/font-browser.glade:624
+#: resources/font-browser.glade:621
 msgid "Semi expanded"
 msgstr "Semi espanso"
 
-#: resources/font-browser.glade:625
+#: resources/font-browser.glade:622
 msgid "Expanded"
 msgstr "Espanso"
 
-#: resources/font-browser.glade:626
+#: resources/font-browser.glade:623
 msgid "Extra expanded"
 msgstr "Extra espanso"
 
-#: resources/font-browser.glade:627
+#: resources/font-browser.glade:624
 msgid "Ultra expanded"
 msgstr "Ultra espanso"
 
-#: resources/font-browser.glade:714
+#: resources/font-browser.glade:711
 msgid "Comparison"
 msgstr "Comparazione"
 

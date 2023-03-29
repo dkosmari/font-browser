@@ -64,6 +64,6 @@ RPM_TARBALL_NAME = $(HOME)/rpmbuild/SOURCES/$(TARBALL_NAME)
 
 rpm: font-browser.spec dist-gzip
 	[ -e $(RPM_TARBALL_NAME) ] || \
-		$(LN_S) $(top_builddir)/$(TARBALL_NAME) $(RPM_TARBALL_NAME)
+		$(LN_S) $(abs_top_builddir)/$(TARBALL_NAME) $(RPM_TARBALL_NAME)
 	rpmbuild -ba $<
 
