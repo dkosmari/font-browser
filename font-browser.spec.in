@@ -1,0 +1,45 @@
+%define name @PACKAGE_NAME@
+%define version @PACKAGE_VERSION@
+%define release %mkrel 1
+
+Name:           %{name}
+Version:        %{version}
+Release:        %{release}
+BuildArch:      noarch
+Source0:        @TARBALL_NAME@
+License:        GPLv3+
+Group:          Graphical desktop/Other
+Url:            http://github.com/dkosmari/font-browser
+Requires:       python3
+Requires:       typelib(Gtk) = 3.0
+BuildRequires:  gettext
+Summary:        A tool to compare fonts.
+
+
+%description
+A graphical application to view and compare installed fonts. 
+
+%prep
+%autosetup
+
+%configure
+
+%build
+%make_build
+
+%check
+
+%install
+%make_install
+
+%find_lang %{name}
+
+%clean
+
+
+%files -f %{name}.lang
+%doc README.md
+%{_bindir}/%{name}
+%{_datadir}/%{name}/%{name}.gresource
+%{_datadir}/applications/%{name}.desktop
+%{_iconsdir}/%{name}.png

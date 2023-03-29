@@ -6,6 +6,7 @@ EXTRA_DIST = \
 	font-browser.gresource.xml \
 	font-browser.png \
 	font-browser.py \
+	font-browser.spec.in \
 	README.md \
 	resources
 
@@ -22,6 +23,9 @@ font-browser: $(srcdir)/font-browser.py Makefile
 		-e 's|[@]PACKAGE_VERSION@|$(PACKAGE_VERSION)|g' \
 		< "$<" > "$@"
 	chmod +x $@
+
+
+all-local: font-browser
 
 
 GRESOURCE_FILE = font-browser.gresource
@@ -49,8 +53,12 @@ icondir = $(datadir)/icons
 icon_DATA = font-browser.png
 
 
+.PHONY: rpm
 
+RPM_TARBALL_NAME = $(HOME)/rpmbuild/SOURCES/$(TARBALL_NAME)
 
-dist-pkg: all
-	echo "Compare fonts side by side." > description-pak
-	checkinstall --install=no --pakdir="${builddir}" --backup=no --deldoc=no --deldesc=no --delspec=yes --pkgname="${PACKAGE_NAME}" --pkgversion="${PACKAGE_VERSION}" --pkgsource="${PACKAGE_URL}" --pkglicense="GPLv3" --pkgarch="noarch" --provides="" --requires=""
+rpm: font-browser.spec dist-gzip
+	 [ -e $(RPM_TARBALL_NAME) ] || \
+		$(LN_S) $(PWD)/$(TARBALL_NAME) $(RPM_TARBALL_NAME)
+	rpmbuild -ba $<
+

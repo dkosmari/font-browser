@@ -21,7 +21,7 @@ Keywords[it]=font;
 Keywords[ja]=フォント;字体;
 Keywords[pt_BR]=fonte;fontes;
 
-Icon=font-browser.png
+Icon=font-browser
 
 Terminal=false
 Type=Application

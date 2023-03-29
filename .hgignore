@@ -2,6 +2,8 @@ syntax: glob
 
 *.gmo
 *.gresource
+*.spec
+*.tar.gz
 *~
 .deps
 ABOUT-NLS
