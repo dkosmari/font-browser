@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: font-browser 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-29 18:06-0300\n"
+"POT-Creation-Date: 2023-03-30 02:04-0300\n"
 "PO-Revision-Date: 2020-08-04 03:15-0300\n"
 "Last-Translator: Daniel K. O. <nothing>\n"
 "Language-Team: Portuguese - Brazil <nothing>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 "X-Generator: Gtranslator 3.32.1\n"
 
-#: font-browser.py:82 resources/font-browser.glade:81
+#: font-browser.py:82 resources/font-browser.glade:95
 msgid "Font Browser"
 msgstr "Navigateur de Polices"
 
@@ -26,7 +26,7 @@ msgstr "Navigateur de Polices"
 msgid "Close"
 msgstr "Fermer"
 
-#: font-browser.py:242
+#: font-browser.py:244
 msgid "Copy \"{}\" to clipboard"
 msgstr "Copier \"{}\" dans le presse-papiers"
 
@@ -34,44 +34,53 @@ msgstr "Copier \"{}\" dans le presse-papiers"
 msgid "Copy font name"
 msgstr "Copier le nom de la police"
 
-#: resources/font-browser.glade:121
+#: resources/font-browser.glade:62
+msgid "Toggle selection"
+msgstr ""
+
+#: resources/font-browser.glade:129
 msgid "S_ample text"
 msgstr "Exemple de texte"
 
-#: resources/font-browser.glade:162
+#: resources/font-browser.glade:170
 msgid "_Scale"
 msgstr "Échelle"
 
-#: resources/font-browser.glade:207
+#: resources/font-browser.glade:186
+msgid "2.0"
+msgstr ""
+
+#: resources/font-browser.glade:216
 msgid "_Only selected"
 msgstr "Seulement sélectionné"
 
-#: resources/font-browser.glade:222
+#: resources/font-browser.glade:231
 msgid "Show only fonts that have been selected in the first column below."
 msgstr ""
 "N'afficher que les polices sélectionnées dans la première colonne ci-dessous."
 
-#: resources/font-browser.glade:247
+#: resources/font-browser.glade:256
 msgid "_Filter"
 msgstr "_Filtre"
 
-#: resources/font-browser.glade:264
-msgid "Only show fonts that contain these words in the name."
-msgstr "Afficher uniquement les polices contenant ces mots dans le nom."
-
-#: resources/font-browser.glade:265
+#: resources/font-browser.glade:271
 msgid "Filter"
 msgstr "Filtre"
 
-#: resources/font-browser.glade:340 resources/font-browser.glade:671
+#: resources/font-browser.glade:282
+msgctxt "Refresh font list."
+msgid "Refresh"
+msgstr ""
+
+#: resources/font-browser.glade:346 resources/font-browser.glade:673
 msgid "Name"
 msgstr "Nom"
 
-#: resources/font-browser.glade:358 resources/font-browser.glade:685
+#: resources/font-browser.glade:364 resources/font-browser.glade:687
 msgid "Sample"
 msgstr "Échantillon"
 
-#: resources/font-browser.glade:387
+#: resources/font-browser.glade:391
 msgid "Fonts"
 msgstr "Polices"
 
@@ -88,112 +97,116 @@ msgstr "Un quetzal réfugié en kimono achète dix pyjamas verts sur le Web."
 msgid "Si_ze"
 msgstr "Taille"
 
-#: resources/font-browser.glade:501 resources/font-browser.glade:559
+#: resources/font-browser.glade:481
+msgid "36.0"
+msgstr ""
+
+#: resources/font-browser.glade:503 resources/font-browser.glade:561
 msgid "Bold"
 msgstr "Gras"
 
-#: resources/font-browser.glade:515 resources/font-browser.glade:580
+#: resources/font-browser.glade:517 resources/font-browser.glade:582
 msgid "Italic"
 msgstr "Italique"
 
-#: resources/font-browser.glade:529
+#: resources/font-browser.glade:531
 msgid "Underline"
 msgstr "Souligner"
 
-#: resources/font-browser.glade:551
+#: resources/font-browser.glade:553
 msgid "Font weight"
 msgstr "Poids de la police"
 
-#: resources/font-browser.glade:553
+#: resources/font-browser.glade:555
 msgid "Thin"
 msgstr "Fine"
 
-#: resources/font-browser.glade:554
+#: resources/font-browser.glade:556
 msgid "Ultra light"
 msgstr "Ultra légère"
 
-#: resources/font-browser.glade:555
+#: resources/font-browser.glade:557
 msgid "Light"
 msgstr "Légère"
 
-#: resources/font-browser.glade:556 resources/font-browser.glade:578
-#: resources/font-browser.glade:620
+#: resources/font-browser.glade:558 resources/font-browser.glade:580
+#: resources/font-browser.glade:622
 msgid "Normal"
 msgstr "Normale"
 
-#: resources/font-browser.glade:557
+#: resources/font-browser.glade:559
 msgid "Medium"
 msgstr "Moyenne"
 
-#: resources/font-browser.glade:558
+#: resources/font-browser.glade:560
 msgid "Semi bold"
 msgstr "Semi-grasse"
 
-#: resources/font-browser.glade:560
+#: resources/font-browser.glade:562
 msgid "Ultra bold"
 msgstr "Ultra gras"
 
-#: resources/font-browser.glade:561
+#: resources/font-browser.glade:563
 msgid "Heavy"
 msgstr "Épaisse"
 
-#: resources/font-browser.glade:562
+#: resources/font-browser.glade:564
 msgid "Ultra heavy"
 msgstr "Ultra épaisse"
 
-#: resources/font-browser.glade:579
+#: resources/font-browser.glade:581
 msgid "Oblique"
 msgstr "Oblique"
 
-#: resources/font-browser.glade:596
+#: resources/font-browser.glade:598
 msgid "None"
 msgstr "Rien"
 
-#: resources/font-browser.glade:597
+#: resources/font-browser.glade:599
 msgid "Single"
 msgstr "Seule"
 
-#: resources/font-browser.glade:598
+#: resources/font-browser.glade:600
 msgid "Double"
 msgstr "Double"
 
-#: resources/font-browser.glade:599
+#: resources/font-browser.glade:601
 msgid "Low"
 msgstr "Basse"
 
-#: resources/font-browser.glade:600
+#: resources/font-browser.glade:602
 msgid "Error"
 msgstr "Erreur"
 
-#: resources/font-browser.glade:616
+#: resources/font-browser.glade:618
 msgid "Ultra condensed"
 msgstr "Ultra condensé"
 
-#: resources/font-browser.glade:617
+#: resources/font-browser.glade:619
 msgid "Extra condensed"
 msgstr "Extra condensé"
 
-#: resources/font-browser.glade:618
+#: resources/font-browser.glade:620
 msgid "Condensed"
 msgstr "Condensé"
 
-#: resources/font-browser.glade:619
+#: resources/font-browser.glade:621
 msgid "Semi condensed"
 msgstr "Semi condensé"
 
-#: resources/font-browser.glade:621
+#: resources/font-browser.glade:623
 msgid "Semi expanded"
 msgstr "Semi expansé"
 
-#: resources/font-browser.glade:622
+#: resources/font-browser.glade:624
 msgid "Expanded"
 msgstr "Expansé"
 
-#: resources/font-browser.glade:623
+#: resources/font-browser.glade:625
 msgid "Extra expanded"
 msgstr "Extra expansé"
 
-#: resources/font-browser.glade:624
+#: resources/font-browser.glade:626
 msgid "Ultra expanded"
 msgstr "Ultra expansé"
 
@@ -208,3 +221,6 @@ msgstr "À propos"
 #: resources/gtk/menus.ui:11
 msgid "_Quit"
 msgstr "Quitter"
+
+#~ msgid "Only show fonts that contain these words in the name."
+#~ msgstr "Afficher uniquement les polices contenant ces mots dans le nom."

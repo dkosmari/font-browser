@@ -202,15 +202,11 @@ class Application(Gtk.Application):
         return True
 
 
-    def fonts_context_popup(self):
-        self.font_list_context_menu.popup()
-
-
     def append_comparison(self, font_family_name):
         self.gui.comp_list.append([font_family_name])
 
 
-    def remove_comparison(self, font_family_name):
+    def remove_comparison(self, font_family_name : str):
         to_remove = None
         for row in self.gui.comp_list:
             if row[COMP_LIST_COL_FONT_FAMILY_NAME] == font_family_name:
@@ -219,14 +215,20 @@ class Application(Gtk.Application):
             self.gui.comp_list.remove(to_remove)
 
 
-    def toggle_font_selection(self, row):
-        newval = not row[FONTS_LIST_COL_SELECTED]
-        font_family_name = row[FONTS_LIST_COL_FONT_FAMILY_NAME]
-        row[FONTS_LIST_COL_SELECTED] = newval
-        if newval:
-            self.append_comparison(font_family_name)
-        else:
-            self.remove_comparison(font_family_name)
+    def toggle_font_selection(self, font_family_name : str):
+        found = None
+        for row in self.gui.fonts_list:
+            if row[FONTS_LIST_COL_FONT_FAMILY_NAME] == font_family_name:
+                found = row
+                break
+        if found is not None:
+            old_sel = found[FONTS_LIST_COL_SELECTED]
+            new_sel = not old_sel
+            found[FONTS_LIST_COL_SELECTED] = new_sel
+            if new_sel:
+                self.append_comparison(font_family_name)
+            else:
+                self.remove_comparison(font_family_name)
 
 
     def do_copy_font_popup_menu(self,
@@ -305,7 +307,9 @@ class Application(Gtk.Application):
                                          tree: Gtk.TreeView,
                                          path: Gtk.TreePath,
                                          column: Gtk.TreeViewColumn):
-        self.toggle_font_selection(tree.get_model()[path])
+        row = tree.get_model()[path]
+        font_family_name = row[FONTS_LIST_COL_FONT_FAMILY_NAME]
+        self.toggle_font_selection(font_family_name)
 
 
     # handle right-click context menu
@@ -354,6 +358,10 @@ class Application(Gtk.Application):
         clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
         clipboard.set_text(self.selected_font_name, -1)
 
+        
+    def on_toggle_selection_entry_activate(self, item: Gtk.MenuItem):
+        self.toggle_font_selection(self.selected_font_name)
+        
 
     def on_bold_toggle_toggled(self, button: Gtk.ToggleToolButton):
         if self.updating_weight:

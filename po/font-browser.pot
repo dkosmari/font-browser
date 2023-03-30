@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: font-browser 0.2.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-29 18:06-0300\n"
+"POT-Creation-Date: 2023-03-30 02:04-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: font-browser.py:82 resources/font-browser.glade:81
+#: font-browser.py:82 resources/font-browser.glade:95
 msgid "Font Browser"
 msgstr ""
 
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: font-browser.py:242
+#: font-browser.py:244
 msgid "Copy \"{}\" to clipboard"
 msgstr ""
 
@@ -33,43 +33,52 @@ msgstr ""
 msgid "Copy font name"
 msgstr ""
 
-#: resources/font-browser.glade:121
+#: resources/font-browser.glade:62
+msgid "Toggle selection"
+msgstr ""
+
+#: resources/font-browser.glade:129
 msgid "S_ample text"
 msgstr ""
 
-#: resources/font-browser.glade:162
+#: resources/font-browser.glade:170
 msgid "_Scale"
 msgstr ""
 
-#: resources/font-browser.glade:207
+#: resources/font-browser.glade:186
+msgid "2.0"
+msgstr ""
+
+#: resources/font-browser.glade:216
 msgid "_Only selected"
 msgstr ""
 
-#: resources/font-browser.glade:222
+#: resources/font-browser.glade:231
 msgid "Show only fonts that have been selected in the first column below."
 msgstr ""
 
-#: resources/font-browser.glade:247
+#: resources/font-browser.glade:256
 msgid "_Filter"
 msgstr ""
 
-#: resources/font-browser.glade:264
-msgid "Only show fonts that contain these words in the name."
-msgstr ""
-
-#: resources/font-browser.glade:265
+#: resources/font-browser.glade:271
 msgid "Filter"
 msgstr ""
 
-#: resources/font-browser.glade:340 resources/font-browser.glade:671
+#: resources/font-browser.glade:282
+msgctxt "Refresh font list."
+msgid "Refresh"
+msgstr ""
+
+#: resources/font-browser.glade:346 resources/font-browser.glade:673
 msgid "Name"
 msgstr ""
 
-#: resources/font-browser.glade:358 resources/font-browser.glade:685
+#: resources/font-browser.glade:364 resources/font-browser.glade:687
 msgid "Sample"
 msgstr ""
 
-#: resources/font-browser.glade:387
+#: resources/font-browser.glade:391
 msgid "Fonts"
 msgstr ""
 
@@ -86,112 +95,116 @@ msgstr ""
 msgid "Si_ze"
 msgstr ""
 
-#: resources/font-browser.glade:501 resources/font-browser.glade:559
+#: resources/font-browser.glade:481
+msgid "36.0"
+msgstr ""
+
+#: resources/font-browser.glade:503 resources/font-browser.glade:561
 msgid "Bold"
 msgstr ""
 
-#: resources/font-browser.glade:515 resources/font-browser.glade:580
+#: resources/font-browser.glade:517 resources/font-browser.glade:582
 msgid "Italic"
 msgstr ""
 
-#: resources/font-browser.glade:529
+#: resources/font-browser.glade:531
 msgid "Underline"
 msgstr ""
 
-#: resources/font-browser.glade:551
+#: resources/font-browser.glade:553
 msgid "Font weight"
 msgstr ""
 
-#: resources/font-browser.glade:553
+#: resources/font-browser.glade:555
 msgid "Thin"
 msgstr ""
 
-#: resources/font-browser.glade:554
+#: resources/font-browser.glade:556
 msgid "Ultra light"
 msgstr ""
 
-#: resources/font-browser.glade:555
+#: resources/font-browser.glade:557
 msgid "Light"
 msgstr ""
 
-#: resources/font-browser.glade:556 resources/font-browser.glade:578
-#: resources/font-browser.glade:620
+#: resources/font-browser.glade:558 resources/font-browser.glade:580
+#: resources/font-browser.glade:622
 msgid "Normal"
 msgstr ""
 
-#: resources/font-browser.glade:557
+#: resources/font-browser.glade:559
 msgid "Medium"
 msgstr ""
 
-#: resources/font-browser.glade:558
+#: resources/font-browser.glade:560
 msgid "Semi bold"
 msgstr ""
 
-#: resources/font-browser.glade:560
+#: resources/font-browser.glade:562
 msgid "Ultra bold"
 msgstr ""
 
-#: resources/font-browser.glade:561
+#: resources/font-browser.glade:563
 msgid "Heavy"
 msgstr ""
 
-#: resources/font-browser.glade:562
+#: resources/font-browser.glade:564
 msgid "Ultra heavy"
 msgstr ""
 
-#: resources/font-browser.glade:579
+#: resources/font-browser.glade:581
 msgid "Oblique"
 msgstr ""
 
-#: resources/font-browser.glade:596
+#: resources/font-browser.glade:598
 msgid "None"
 msgstr ""
 
-#: resources/font-browser.glade:597
+#: resources/font-browser.glade:599
 msgid "Single"
 msgstr ""
 
-#: resources/font-browser.glade:598
+#: resources/font-browser.glade:600
 msgid "Double"
 msgstr ""
 
-#: resources/font-browser.glade:599
+#: resources/font-browser.glade:601
 msgid "Low"
 msgstr ""
 
-#: resources/font-browser.glade:600
+#: resources/font-browser.glade:602
 msgid "Error"
 msgstr ""
 
-#: resources/font-browser.glade:616
+#: resources/font-browser.glade:618
 msgid "Ultra condensed"
 msgstr ""
 
-#: resources/font-browser.glade:617
+#: resources/font-browser.glade:619
 msgid "Extra condensed"
 msgstr ""
 
-#: resources/font-browser.glade:618
+#: resources/font-browser.glade:620
 msgid "Condensed"
 msgstr ""
 
-#: resources/font-browser.glade:619
+#: resources/font-browser.glade:621
 msgid "Semi condensed"
 msgstr ""
 
-#: resources/font-browser.glade:621
+#: resources/font-browser.glade:623
 msgid "Semi expanded"
 msgstr ""
 
-#: resources/font-browser.glade:622
+#: resources/font-browser.glade:624
 msgid "Expanded"
 msgstr ""
 
-#: resources/font-browser.glade:623
+#: resources/font-browser.glade:625
 msgid "Extra expanded"
 msgstr ""
 
-#: resources/font-browser.glade:624
+#: resources/font-browser.glade:626
 msgid "Ultra expanded"
 msgstr ""
 

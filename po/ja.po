@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: font-browser 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-29 18:06-0300\n"
+"POT-Creation-Date: 2023-03-30 02:04-0300\n"
 "PO-Revision-Date: 2020-08-03 04:17-0300\n"
 "Last-Translator: Daniel K. O. <nothing>\n"
 "Language-Team: Portuguese - Brazil <nothing>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 "X-Generator: Gtranslator 3.32.1\n"
 
-#: font-browser.py:82 resources/font-browser.glade:81
+#: font-browser.py:82 resources/font-browser.glade:95
 msgid "Font Browser"
 msgstr "フォントブラウザ"
 
@@ -26,7 +26,7 @@ msgstr "フォントブラウザ"
 msgid "Close"
 msgstr "閉めて"
 
-#: font-browser.py:242
+#: font-browser.py:244
 msgid "Copy \"{}\" to clipboard"
 msgstr "「{}」をクリップボードにコピー"
 
@@ -34,44 +34,53 @@ msgstr "「{}」をクリップボードにコピー"
 msgid "Copy font name"
 msgstr "フォント名をコピー"
 
-#: resources/font-browser.glade:121
+#: resources/font-browser.glade:62
+msgid "Toggle selection"
+msgstr ""
+
+#: resources/font-browser.glade:129
 msgid "S_ample text"
 msgstr "サンプルテキスト"
 
-#: resources/font-browser.glade:162
+#: resources/font-browser.glade:170
 msgid "_Scale"
 msgstr "倍率"
 
-#: resources/font-browser.glade:207
+#: resources/font-browser.glade:186
+msgid "2.0"
+msgstr ""
+
+#: resources/font-browser.glade:216
 msgid "_Only selected"
 msgstr "選択した"
 
-#: resources/font-browser.glade:222
+#: resources/font-browser.glade:231
 msgid "Show only fonts that have been selected in the first column below."
 msgstr "下の最初の列で選択されているフォントのみを表示します。"
 
-#: resources/font-browser.glade:247
+#: resources/font-browser.glade:256
 #, fuzzy
 msgid "_Filter"
 msgstr "漉す"
 
-#: resources/font-browser.glade:264
-msgid "Only show fonts that contain these words in the name."
-msgstr "名前にこれらの単語を含むフォントのみを表示します。"
-
-#: resources/font-browser.glade:265
+#: resources/font-browser.glade:271
 msgid "Filter"
 msgstr "漉す"
 
-#: resources/font-browser.glade:340 resources/font-browser.glade:671
+#: resources/font-browser.glade:282
+msgctxt "Refresh font list."
+msgid "Refresh"
+msgstr ""
+
+#: resources/font-browser.glade:346 resources/font-browser.glade:673
 msgid "Name"
 msgstr "名"
 
-#: resources/font-browser.glade:358 resources/font-browser.glade:685
+#: resources/font-browser.glade:364 resources/font-browser.glade:687
 msgid "Sample"
 msgstr "サンプル"
 
-#: resources/font-browser.glade:387
+#: resources/font-browser.glade:391
 msgid "Fonts"
 msgstr "字体"
 
@@ -90,113 +99,117 @@ msgstr ""
 msgid "Si_ze"
 msgstr "サイズ"
 
-#: resources/font-browser.glade:501 resources/font-browser.glade:559
+#: resources/font-browser.glade:481
+msgid "36.0"
+msgstr ""
+
+#: resources/font-browser.glade:503 resources/font-browser.glade:561
 msgid "Bold"
 msgstr ""
 
-#: resources/font-browser.glade:515 resources/font-browser.glade:580
+#: resources/font-browser.glade:517 resources/font-browser.glade:582
 msgid "Italic"
 msgstr ""
 
-#: resources/font-browser.glade:529
+#: resources/font-browser.glade:531
 msgid "Underline"
 msgstr ""
 
-#: resources/font-browser.glade:551
+#: resources/font-browser.glade:553
 #, fuzzy
 msgid "Font weight"
 msgstr "フォントブラウザ"
 
-#: resources/font-browser.glade:553
+#: resources/font-browser.glade:555
 msgid "Thin"
 msgstr ""
 
-#: resources/font-browser.glade:554
+#: resources/font-browser.glade:556
 msgid "Ultra light"
 msgstr ""
 
-#: resources/font-browser.glade:555
+#: resources/font-browser.glade:557
 msgid "Light"
 msgstr ""
 
-#: resources/font-browser.glade:556 resources/font-browser.glade:578
-#: resources/font-browser.glade:620
+#: resources/font-browser.glade:558 resources/font-browser.glade:580
+#: resources/font-browser.glade:622
 msgid "Normal"
 msgstr ""
 
-#: resources/font-browser.glade:557
+#: resources/font-browser.glade:559
 msgid "Medium"
 msgstr ""
 
-#: resources/font-browser.glade:558
+#: resources/font-browser.glade:560
 msgid "Semi bold"
 msgstr ""
 
-#: resources/font-browser.glade:560
+#: resources/font-browser.glade:562
 msgid "Ultra bold"
 msgstr ""
 
-#: resources/font-browser.glade:561
+#: resources/font-browser.glade:563
 msgid "Heavy"
 msgstr ""
 
-#: resources/font-browser.glade:562
+#: resources/font-browser.glade:564
 msgid "Ultra heavy"
 msgstr ""
 
-#: resources/font-browser.glade:579
+#: resources/font-browser.glade:581
 msgid "Oblique"
 msgstr ""
 
-#: resources/font-browser.glade:596
+#: resources/font-browser.glade:598
 msgid "None"
 msgstr ""
 
-#: resources/font-browser.glade:597
+#: resources/font-browser.glade:599
 msgid "Single"
 msgstr ""
 
-#: resources/font-browser.glade:598
+#: resources/font-browser.glade:600
 msgid "Double"
 msgstr ""
 
-#: resources/font-browser.glade:599
+#: resources/font-browser.glade:601
 msgid "Low"
 msgstr ""
 
-#: resources/font-browser.glade:600
+#: resources/font-browser.glade:602
 msgid "Error"
 msgstr ""
 
-#: resources/font-browser.glade:616
+#: resources/font-browser.glade:618
 msgid "Ultra condensed"
 msgstr ""
 
-#: resources/font-browser.glade:617
+#: resources/font-browser.glade:619
 msgid "Extra condensed"
 msgstr ""
 
-#: resources/font-browser.glade:618
+#: resources/font-browser.glade:620
 msgid "Condensed"
 msgstr ""
 
-#: resources/font-browser.glade:619
+#: resources/font-browser.glade:621
 msgid "Semi condensed"
 msgstr ""
 
-#: resources/font-browser.glade:621
+#: resources/font-browser.glade:623
 msgid "Semi expanded"
 msgstr ""
 
-#: resources/font-browser.glade:622
+#: resources/font-browser.glade:624
 msgid "Expanded"
 msgstr ""
 
-#: resources/font-browser.glade:623
+#: resources/font-browser.glade:625
 msgid "Extra expanded"
 msgstr ""
 
-#: resources/font-browser.glade:624
+#: resources/font-browser.glade:626
 msgid "Ultra expanded"
 msgstr ""
 
@@ -211,3 +224,6 @@ msgstr "プログラムについて"
 #: resources/gtk/menus.ui:11
 msgid "_Quit"
 msgstr "終了する"
+
+#~ msgid "Only show fonts that contain these words in the name."
+#~ msgstr "名前にこれらの単語を含むフォントのみを表示します。"
